@@ -1,5 +1,574 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* =====GRID===== */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header"
+        "navigation"
+        "main";
+}
+
+.header {
+    grid-area: header;
+}
+
+.navigation {
+    grid-area: navigation;
+}
+
+.main {
+
+    grid-area: main;
+}
+
+
+/* ====Base Element Styles==== */
+
+
+body {
+
+    width: 100%;
+    color: rgb(238, 238, 238);
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+
+}
+
+p {
+    color: rgb(80, 75, 103)
+}
+
+h1 {
+    font-size: 21px;
+    padding-left: 15px;
+}
+
+h2 {
+    font-size: 20px;
+    color: rgb(109, 109, 109);
+    font-weight: 400;
+
+}
+
+
+.name {
+    color: rgb(227, 227, 227);
+    font-weight: 200;
+    ;
+}
+
+h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: rgb(92, 92, 92);
+    font-size: 20px;
+    font-weight: 400;
+
+
+}
+
+li {
+    color: rgb(92, 92, 92);
+    list-style-type: none;
+    letter-spacing: 0.8px;
+    font-size: 16px;
+
+}
+
+/* SVG BELL style*/
+
+header .bell {
+    height: 25px;
+    fill: white;
+}
+
+
+.username {
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* --h1 YourApp-- */
+
+.bold-h1 {
+    font-weight: 700;
+}
+
+.light-h1 {
+    font-weight: 100;
+}
+
+.bold-h1,
+.light-h1 {
+    color: white;
+}
+
+.bar {
+    padding-left: 16px;
+    font-size: 24px;
+    font-weight: 100;
+}
+
+/* --Profile Picture-- */
+
+.profile-image {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin: 0 2em;
+}
+
+
+
+/* ====== Base Layout Styles ====== */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main";
+}
+
+/* ---Header--- */
+
+header {
+    display: flex;
+    grid-area: header;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(112, 118, 197);
+}
+
+
+
+.profile-box {
+    margin-left: auto;
+
+}
+
+
+.bell {
+    height: 1.8rem;
+    width: 1.8rem;
+    cursor: pointer;
+    position: relative;
+}
+
+
+/* ---Dropdown + Bell--- */
+.bell:hover {
+    transform-origin: left-right;
+    transform-box: fill-box;
+    animation: spin 0.2s cubic-bezier(.6, 0, .6, 1) infinite;
+}
+
+@keyframes spin {
+
+    25% {
+        transform: rotate(9deg);
+    }
+
+    25% {
+        transform: rotate(-12deg);
+    }
+
+    100% {
+        transform: rotate(12deg);
+    }
+
+}
+
+
+
+header>div {
+    position: relative;
+}
+
+.name {
+    padding-right: 16px;
+}
+
+#notifications {
+    position: absolute;
+    right: 1px;
+    top: 0;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    background-color: lightgreen;
+}
+
+.dropdown-content {
+    visibility: hidden;
+
+}
+
+/* ---Navigation--- */
+
+nav {
+    height: 60px;
+    display: flex;
+    grid-area: nav;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(80, 75, 103);
+
+}
+
+nav a:nth-of-type(1) {
+
+    text-decoration: underline;
+}
+
+nav a img {
+    margin-left: 10px;
+    height: 20px;
+    padding-right: 40px;
+}
+
+/* ---Main--- */
+.main {
+
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+}
+
+.headline {
+    margin: 24px;
+}
+
+/* ---Search Box Style--- */
+.main-header-search {
+    flex: 1;
+    height: 100%;
+    background: rgb(245, 245, 245);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+}
+
+.main-header-search input {
+    padding: 16px;
+    margin: 15px 8px;
+    font-size: 17px;
+    border: 0.2px solid rgb(227, 227, 227);
+    border-radius: 4px;
+    float: right;
+    width: 70%;
+    height: 10px;
+    background: #ffffff;
+}
+
+/* ---Alert box--- */
+
+#alert {
+    background-color: rgb(102, 102, 155);
+    color: white;
+    display: flex;
+}
+
+.alert-banner {
+    text-align: center;
+}
+
+
+/* ---graphs--- */
+
+canvas {
+    max-width: 100%;
+}
+
+.traffic-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.traffic-h3 {
+    padding: 18px;
+}
+
+.traffic-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.traffic-nav li {
+    padding: 20px 8px;
+}
+
+/* ---DAILY graph charts--- */
+
+.daily h3 {
+    padding: 18px;
+}
+
+/* ---MOBILE USERS graph charts--- */
+
+.mobile h3 {
+    padding: 18px;
+}
+
+/* ---SOCIAL STATS--- */
+
+.social-stats h3 {
+    padding: 18px;
+}
+
+.social-container {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    align-items: center;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-text .social-label {
+    font-weight: 800;
+    color: #27171E;
+}
+
+.social-text p {
+    margin: 10px 5px 5px 25px;
+    font-size: 25px;
+    color: rgb(115, 105, 158)
+}
+
+.twitter-svg,
+.facebook-svg,
+.google-svg {
+    fill: rgb(80, 75, 103);
+
+}
+
+/* ---NEW MEMBERS--- */
+
+.members h3 {
+    padding: 18px;
+}
+
+.members-container {
+    display: flex;
+    width: 95%;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid darkgray;
+}
+
+.members-container a {
+    text-decoration: none;
+}
+
+.date {
+    margin-left: auto;
+}
+
+/* ---RECENT ACTIVITY-- */
+
+.activity {
+    margin-top: 2rem;
+    ;
+}
+
+.activity-container {
+    display: flex;
+    width: 95%;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid darkgray;
+}
+
+.activity-container>p {
+    margin-left: auto;
+}
+
+/* ---MESSAGE USER-- */
+
+.messaging {
+    margin-top: 2rem;
+}
+
+.widget-container input,
+.form-area {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid rgb(87, 80, 121);
+}
+
+.form-area {
+    height: 20vh;
+}
+
+.button-primary {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: rgb(87, 80, 121);
+    color: rgb(234, 218, 247);
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    font-size: 1.3em;
+    border: none;
+}
+
+/* ---SETTINGS-- */
+
+.settings {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.settings h3 {
+    padding: 18px;
+}
+
+
+.toggle-container h4 {
+    width: 12rem;
+    color: rgb(92, 92, 92);
+    font-weight: 300;
+    margin-left: 2rem;
+    padding-top: 10px;
+}
+
+.toggle-switch {
+    display: inline-block;
+    position: relative;
+    margin: 1rem;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: rgb(134, 124, 148);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 34px;
+    border: 1px solid rgb(225, 225, 225);
+    transition: .2s;
+    box-shadow: 5px 3px 3px rgb(205, 205, 205);
+}
+
+.slider::before {
+    position: absolute;
+    align-items: center;
+    content: '';
+    height: 30px;
+    width: 30px;
+    top: 4px;
+    left: 5px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+.slider::after {
+    position: absolute;
+    content: 'ON';
+    height: 30px;
+    width: 30px;
+    top: 12px;
+    left: 12px;
+    color: white;
+}
+
+input[type="checkbox"]:checked+.slider::before {
+    transform: translateX(60px);
+}
+
+input[type="checkbox"]:checked+.slider {
+    background-color: rgb(147, 189, 147);
+}
+
+select[class="form-field"] {
+    display: block;
+    border: 1px solid darkgray;
+    color: grey;
+    border-radius: 5px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.setting-button {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+
+.primary-button,
+.cancel-button {
+    background-color: rgb(152, 191, 160);
+    display: inline-block;
+    border: none;
+    width: 48%;
+    padding: 1rem;
+    border-radius: 5px;
+    color: white;
+}
+
+.cancel-button {
+    background-color: rgb(228, 175, 175);
+}
+
 /*---Media Queries--*/
 
-@media (min-width: 768px) {}
-
-@media (min-width: 1024px) {}
+@media (min-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 55px 1fr;
+        grid-template-areas:
+            "header header"
+            "nav main";
+    }
+}
