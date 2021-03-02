@@ -73,6 +73,7 @@ h3 {
     color: rgb(92, 92, 92);
     font-size: 20px;
     font-weight: 400;
+    padding: 16px;
 
 
 }
@@ -89,7 +90,7 @@ li {
 
 header .bell {
     height: 25px;
-    fill: white;
+
 }
 
 
@@ -161,6 +162,8 @@ header {
 
 .profile-box {
     margin-left: auto;
+    display: flex;
+    align-items: center;
 
 }
 
@@ -169,7 +172,6 @@ header {
     height: 1.8rem;
     width: 1.8rem;
     cursor: pointer;
-    position: relative;
 }
 
 
@@ -206,18 +208,68 @@ header>div {
     padding-right: 16px;
 }
 
-#notifications {
-    position: absolute;
-    right: 1px;
-    top: 0;
-    height: 7px;
-    width: 7px;
-    border-radius: 50%;
-    background-color: lightgreen;
-}
 
 .dropdown-content {
-    visibility: hidden;
+    position: absolute;
+    background-color: #726E97;
+    min-width: 200px;
+    border-radius: 10%;
+    z-index: 2;
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    color: white;
+    border-bottom: 1px solid darkgray;
+
+}
+
+.dropdown-content a:hover {
+    color: darkgray;
+}
+
+.dropdown-content a:last-child {
+    border: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.dot {
+    content: '';
+    position: absolute;
+    background-color: #07f261;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 1;
+    right: 1;
+}
+
+/* Alert style --*/
+
+.alert-banner {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(191, 185, 233);
+    padding: .45rem;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.alert-banner-close {
+    font-size: 1em;
+    font-weight: 800;
+    padding: .1rem;
+    color: rgb(70, 70, 70);
+    background-color: var(--main-color);
+    border: none;
+    cursor: pointer;
+
+
 
 }
 
@@ -286,17 +338,6 @@ nav a img {
     background: #ffffff;
 }
 
-/* ---Alert box--- */
-
-#alert {
-    background-color: rgb(102, 102, 155);
-    color: white;
-    display: flex;
-}
-
-.alert-banner {
-    text-align: center;
-}
 
 
 /* ---graphs--- */
@@ -310,9 +351,6 @@ canvas {
     justify-content: space-between;
 }
 
-.traffic-h3 {
-    padding: 18px;
-}
 
 .traffic-nav {
     display: flex;
@@ -324,11 +362,15 @@ canvas {
     padding: 20px 8px;
 }
 
+
+.active {
+    background-color: rgb(220, 221, 245);
+    border-radius: 45px;
+
+}
+
 /* ---DAILY graph charts--- */
 
-.daily h3 {
-    padding: 18px;
-}
 
 /* ---MOBILE USERS graph charts--- */
 
@@ -338,9 +380,7 @@ canvas {
 
 /* ---SOCIAL STATS--- */
 
-.social-stats h3 {
-    padding: 18px;
-}
+
 
 .social-container {
     display: flex;
@@ -355,21 +395,15 @@ canvas {
 
 .social-text .social-label {
     font-weight: 800;
-    color: #27171E;
+    color: #3c3c54;
 }
 
 .social-text p {
     margin: 10px 5px 5px 25px;
     font-size: 25px;
-    color: rgb(115, 105, 158)
+    color: #73699e, 21%, 52%)
 }
 
-.twitter-svg,
-.facebook-svg,
-.google-svg {
-    fill: rgb(80, 75, 103);
-
-}
 
 /* ---NEW MEMBERS--- */
 
@@ -387,6 +421,14 @@ canvas {
 
 .members-container a {
     text-decoration: none;
+    cursor: pointer;
+    color: rgb(174, 162, 194);
+}
+
+.members-container a:hover {
+
+    cursor: pointer;
+    color: rgb(35, 7, 80);
 }
 
 .date {
@@ -488,7 +530,7 @@ canvas {
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 12px;
     border-radius: 34px;
     border: 1px solid rgb(225, 225, 225);
     transition: .2s;
@@ -502,7 +544,7 @@ canvas {
     height: 30px;
     width: 30px;
     top: 4px;
-    left: 5px;
+    left: 6px;
     background-color: white;
     border-radius: 50%;
     transition: .4s;
@@ -514,12 +556,12 @@ canvas {
     height: 30px;
     width: 30px;
     top: 12px;
-    left: 12px;
+    left: 5px;
     color: white;
 }
 
 input[type="checkbox"]:checked+.slider::before {
-    transform: translateX(60px);
+    transform: translateX(46px);
 }
 
 input[type="checkbox"]:checked+.slider {
@@ -565,10 +607,41 @@ select[class="form-field"] {
 
 @media (min-width: 768px) {
     .grid-container {
-        display: grid;
         grid-template-columns: 55px 1fr;
         grid-template-areas:
             "header header"
-            "nav main";
+            "navigation main";
     }
+
+    .main {
+        grid-template-columns: 50%;
+    }
+
+    .traffic,
+    .social {
+        grid-column: 1 / span 2;
+    }
+
+    .daily,
+    .members,
+    .message {
+        grid-column: 1 / span 1;
+    }
+
+
+    .mobile,
+    .activity,
+    .settings {
+        grid-column: 2 / span 1;
+    }
+
+    .widget-container-full {
+        width: 90vw;
+    }
+
+    .widget-container-half {
+        width: 45vw;
+    }
+
+
 }
