@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css-toggle-switch-master/">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/toggle-switch.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Your App | Web Data Traffic</title>
 </head>
 
@@ -77,8 +76,7 @@
                             </div>
                     
                         <!-- line graph charts -->
-                        <section>
-                                <div class="traffic">
+                        <section class="traffic">
                                     <div class="traffic-header">
                                         <div class="traffic-h3">
                                         <h3>Traffic</h3>
@@ -94,36 +92,30 @@
                                     <!-- element line graph will attach to -->
                                     <canvas id="traffic-chart"></canvas>
                                     </div>
-                                </div>
                         </section>  
 
                             <!-- BAR GRAPH -->
 
-                            <section>
-                                    <div class="daily">
+                            <sectionn class="daily">
                                         <h3>Daily Traffic</h3>
                                             <div class="widget-container-half">
                                                 <!-- element bar graph will attach to -->
                                                 <canvas id="daily-chart"></canvas>
                                             </div>
-                                    </div>
                             </section>
 
                             <!-- MOBILE -->
 
-                            <section>
-                                    <div class="mobile">
+                            <section class="mobile">
                                         <h3>Mobile Users</h3>
                                             <div class="split-widget"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
                                             <canvas id="mobile-chart" width="1408" height="704" class="chartjs-render-monitor" style="display: block; height: 352px; width: 704px;"></canvas>
                                             </div>
-                                    </div>
                             </section>
 
                             <!-- SOCIAL -->
 
-                            <section>
-                                    <div class="social" id="social">
+                            <section class="social" id="social">
                                         <h3>Social Stats</h3>
                                             <div class="social-box">
                                                     <div class="social-container">
@@ -156,12 +148,10 @@
                                                 <p class="social-label">2,530</p>
                                             </div>
                                         </div>
-                                    </div>
                             </section>
 
                     <!-- NEW MEMBERS -->
-                            <section>
-                                <div class="members" id="members-sec">
+                            <section class="members" id="members-sec">
                                     <h3>New Members</h3>
                                     
                                         <div class="members-container">
@@ -203,12 +193,10 @@
                                             </div>
                                                 <p class="date">10/15/15</p>
                                         </div>
-                                </div>
                             </section>
 
                     <!-- RECENT ACTIVITY -->
-                        <section>
-                                <div class="activity">
+                        <section class="activity">
                                     <h3>Recent Activity</h3>
                                 
                                         <div class="activity-container">
@@ -250,11 +238,9 @@
                                                 </div>
                                             <p>></p>
                                         </div>
-                                </div>
                         </section>
                     <!-- MESSAGING -->
-                    <section>
-                            <div class="message">
+                    <section class="message">
                                 <h3>Message User</h3>
                                 <form class="widget-container">
                                     <input type="text" placeholder="Search for user"
@@ -263,12 +249,10 @@
                                     id= "messageField" ></textarea>
                                     <button class="button-primary" id="send" >Send</button>
                                     </form>
-                            </div>
                     </section>
 
                     <!-- SETTINGS -->
-                    <section>
-                            <div class="settings" id="setting">
+                    <section class="settings" id="setting">
                                 <h3>Settings</h3>
                                     <div class="toggle-container">
                                     <h4>Send Email Notifications</h4>
@@ -297,7 +281,6 @@
                                         <button class="primary-button" id="save">Save</button>
                                         <button class="cancel-button" id="cancel">Cancel</button>
                                     </div>
-                            </div>
                         </section>
 
                     </main>

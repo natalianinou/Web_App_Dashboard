@@ -290,12 +290,17 @@ nav a img {
 }
 
 /* ---Main--- */
-.main {
+main {
 
     grid-area: main;
     display: flex;
     flex-direction: column;
 
+}
+
+main {
+    display: grid;
+    grid-template-columns: 50%;
 }
 
 .main-header {
@@ -404,7 +409,7 @@ canvas {
 .social-text p {
     margin: 10px 5px 5px 25px;
     font-size: 20px;
-    color: #73699e, 21%, 52%)
+    color: #73699e;
 }
 
 
@@ -639,8 +644,17 @@ select[class="form-field"] {
 
     /* ---- Main ---- */
 
+    main {
+        display: grid;
+        grid-template-columns: 50%;
+    }
 
-
+    .main-header,
+    .alert,
+    .traffic,
+    .social {
+        grid-column: 1 / span 2;
+    }
 
 
     /* left column */
@@ -667,3 +681,4 @@ select[class="form-field"] {
         margin: 0 auto;
 
     }
+}
