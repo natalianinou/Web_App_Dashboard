@@ -13,22 +13,10 @@
     grid-template-rows: auto;
     grid-template-areas:
         "header"
-        "navigation"
+        "nav"
         "main";
 }
 
-.header {
-    grid-area: header;
-}
-
-.navigation {
-    grid-area: navigation;
-}
-
-.main {
-
-    grid-area: main;
-}
 
 
 /* ====Base Element Styles==== */
@@ -36,7 +24,7 @@
 
 body {
 
-    width: 100%;
+
     color: rgb(238, 238, 238);
     letter-spacing: 1px;
     font-family: 'Roboto', sans-serif;
@@ -147,6 +135,8 @@ header .bell {
         "main";
 }
 
+
+
 /* ---Header--- */
 
 header {
@@ -208,9 +198,14 @@ header {
 .dropdown-content {
     position: absolute;
     background-color: #726E97;
-    min-width: 200px;
+    width: 200px;
+    height: 45px;
     border-radius: 10%;
     z-index: 2;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .dropdown-content a {
@@ -230,9 +225,6 @@ header {
     border: none;
 }
 
-.hidden {
-    display: none;
-}
 
 .dot {
     content: '';
@@ -249,24 +241,28 @@ header {
 
 .alert-banner {
     display: flex;
+    width: 98%;
     justify-content: space-between;
-    background-color: rgb(191, 185, 233);
-    padding: .45rem;
+    margin: 0 auto;
+
+    background-color: rgb(124, 123, 179);
+    padding: 0.8rem;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 
 .alert-banner-close {
-    font-size: 1em;
-    font-weight: 800;
+    font-size: 1.5em;
+    font-weight: 300;
     padding: .1rem;
-    color: rgb(70, 70, 70);
-    background-color: var(--main-color);
+    color: rgb(249, 249, 249);
+    background-color: transparent;
     border: none;
     cursor: pointer;
+}
 
-
-
+.alert-banner p {
+    color: white;
 }
 
 /* ---Navigation--- */
@@ -345,6 +341,7 @@ canvas {
 .traffic-header {
     display: flex;
     justify-content: space-between;
+    margin-top: 1em;
 }
 
 
@@ -352,18 +349,23 @@ canvas {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
 }
 
 .traffic-nav li {
-    padding: 20px 8px;
+    padding: 8px 8px;
+    cursor: pointer;
 }
 
 
 .active {
-    background-color: rgb(220, 221, 245);
+    background-color: rgb(186, 235, 194);
     border-radius: 45px;
+    font-weight: 700;
+
 
 }
+
 
 /* ---DAILY graph charts--- */
 
@@ -376,17 +378,21 @@ canvas {
 
 /* ---SOCIAL STATS--- */
 
+.social-box {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 
+}
 
 .social-container {
-    display: flex;
-    width: 95%;
-    margin: 0 auto;
-    align-items: center;
+    width: 33%;
     border: 1px solid darkgray;
     border-radius: 5px;
-    padding: 1rem 1rem;
     margin-bottom: 1rem;
+    margin: 16px;
+    padding: 8px;
+    justify-content: space-between;
 }
 
 .social-text .social-label {
@@ -394,9 +400,10 @@ canvas {
     color: #3c3c54;
 }
 
+
 .social-text p {
     margin: 10px 5px 5px 25px;
-    font-size: 25px;
+    font-size: 20px;
     color: #73699e, 21%, 52%)
 }
 
@@ -452,7 +459,7 @@ canvas {
 
 /* ---MESSAGE USER-- */
 
-.messaging {
+.message {
     margin-top: 2rem;
 }
 
@@ -478,7 +485,7 @@ canvas {
     margin-bottom: 1rem;
     padding: 1rem;
     border-radius: 6px;
-    background-color: rgb(87, 80, 121);
+    background-color: rgb(125, 118, 161);
     color: rgb(234, 218, 247);
     font-weight: 300;
     letter-spacing: 1.2px;
@@ -602,42 +609,61 @@ select[class="form-field"] {
 /*---Media Queries--*/
 
 @media (min-width: 768px) {
+
+
     .grid-container {
-        grid-template-columns: 55px 1fr;
+        display: grid;
+        grid-template-columns: 10% 1fr;
         grid-template-areas:
             "header header"
-            "navigation main";
+            "nav main";
     }
 
-    .main {
-        grid-template-columns: 50%;
+
+    /* ---- Navigation ---- */
+    nav {
+        flex-direction: column;
+        justify-content: flex-start;
+        justify-items: center;
+        height: 100%;
+        padding: 16px;
     }
 
-    .traffic,
-    .social {
-        grid-column: 1 / span 2;
+    nav a img {
+        margin-top: 16px;
+        justify-content: space-between;
+        height: 35%;
+
+
     }
 
+    /* ---- Main ---- */
+
+
+
+
+
+    /* left column */
     .daily,
     .members,
     .message {
         grid-column: 1 / span 1;
     }
 
-
+    /* right column */
     .mobile,
     .activity,
     .settings {
         grid-column: 2 / span 1;
     }
 
-    .widget-container-full {
-        width: 90vw;
+    /*---- alert ----*/
+
+    .alert-banner {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 95%;
+        margin: 0 auto;
+
     }
-
-    .widget-container-half {
-        width: 45vw;
-    }
-
-
-}
