@@ -17,18 +17,16 @@
         "main";
 }
 
-
-
 /* ====Base Element Styles==== */
 
 
 body {
 
-
     color: rgb(238, 238, 238);
     letter-spacing: 1px;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+    width: 100%;
 
 }
 
@@ -123,20 +121,6 @@ header .bell {
 
 
 
-/* ====== Base Layout Styles ====== */
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto;
-    grid-template-areas:
-        "header"
-        "nav"
-        "main";
-}
-
-
-
 /* ---Header--- */
 
 header {
@@ -195,34 +179,59 @@ header {
 }
 
 
-.dropdown-content {
-    position: absolute;
-    background-color: #726E97;
-    width: 200px;
-    height: 45px;
-    border-radius: 10%;
-    z-index: 2;
-}
-
-.hidden {
-    visibility: hidden;
-}
-
-.dropdown-content a {
-    display: flex;
-    align-items: center;
-    padding: 0.75rem;
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
     color: white;
-    border-bottom: 1px solid darkgray;
-
-}
-
-.dropdown-content a:hover {
-    color: darkgray;
-}
-
-.dropdown-content a:last-child {
+    padding: 16px;
+    margin-right: 16px;
+    font-size: 16px;
     border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: absolute;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    min-width: 200px;
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: rgb(116, 116, 116);
+    font-weight: 300;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: transparent;
+}
+
+.border {
+    border-bottom: 0.5px solid rgb(187, 187, 187);
+}
+
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
 }
 
 
@@ -298,10 +307,6 @@ main {
 
 }
 
-main {
-    display: grid;
-    grid-template-columns: 50%;
-}
 
 .main-header {
     display: flex;
@@ -383,7 +388,13 @@ canvas {
 
 /* ---SOCIAL STATS--- */
 
-.social-box {
+/* .social-box {
+    display: flex;
+    justify-content: space-between;
+
+} */
+
+.social-wrap {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -391,13 +402,14 @@ canvas {
 }
 
 .social-container {
-    width: 33%;
+    display: block;
     border: 1px solid darkgray;
     border-radius: 5px;
     margin-bottom: 1rem;
     margin: 16px;
     padding: 8px;
     justify-content: space-between;
+    background-color: rgb(244, 244, 244);
 }
 
 .social-text .social-label {
@@ -410,6 +422,10 @@ canvas {
     margin: 10px 5px 5px 25px;
     font-size: 20px;
     color: #73699e;
+}
+
+.social svg {
+    margin: 16px;
 }
 
 
@@ -624,6 +640,12 @@ select[class="form-field"] {
             "nav main";
     }
 
+    /* ---- Header ---- */
+
+    h1 {
+        margin-left: 1em;
+        font-size: 2em;
+    }
 
     /* ---- Navigation ---- */
     nav {
@@ -649,6 +671,7 @@ select[class="form-field"] {
         grid-template-columns: 50%;
     }
 
+
     .main-header,
     .alert,
     .traffic,
@@ -662,6 +685,7 @@ select[class="form-field"] {
     .members,
     .message {
         grid-column: 1 / span 1;
+        margin-left: 1em;
     }
 
     /* right column */
@@ -680,5 +704,97 @@ select[class="form-field"] {
         width: 95%;
         margin: 0 auto;
 
+    }
+
+    .members,
+    .activity {
+        display: block;
+    }
+
+    /*---- charts style ----*/
+
+    canvas {
+        margin: 1em;
+    }
+
+    /*---- social ----*/
+
+    .social-container {
+        padding: 15px 12px;
+        flex-direction: row;
+        flex-basis: 33.333%;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .social-text {
+        margin-left: 10px;
+    }
+
+    .social svg:hover {
+
+        transform-origin: left-right;
+        transform-box: fill-box;
+        animation: spin 0.3s cubic-bezier(.6, 0, .6, 1) infinite;
+
+
+        @keyframes spin {
+
+            25% {
+                transform: rotate(9deg);
+            }
+
+            25% {
+                transform: rotate(-12deg);
+            }
+
+            100% {
+                transform: rotate(12deg);
+            }
+
+        }
+
+    }
+
+    /*---- activity ----*/
+
+    .activity {
+        margin-top: 0.3em;
+    }
+
+    /*---- settings ----*/
+
+    .settings {
+        margin-top: 2rem;
+    }
+
+
+    /*---- message ----*/
+
+
+    .message textarea {
+        height: 221px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+
+
+    .social-text p:first-child {
+        font-weight: 700;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .social-text p:last-child {
+        font-weight: 100;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .social svg {
+        display: block;
+        margin: auto;
     }
 }
