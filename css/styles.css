@@ -36,7 +36,7 @@ p {
 
 h1 {
     font-size: 21px;
-    padding-left: 15px;
+    padding: 2em;
 }
 
 h2 {
@@ -116,7 +116,7 @@ header .bell {
     border-radius: 50%;
     width: 45px;
     height: 45px;
-    margin: 0 2em;
+    margin: 0 1em;
 }
 
 
@@ -150,7 +150,7 @@ header {
 
 
 /* ---Dropdown + Bell--- */
-.bell:hover {
+.bell {
     transform-origin: left-right;
     transform-box: fill-box;
     animation: spin 0.2s cubic-bezier(.6, 0, .6, 1) infinite;
@@ -364,8 +364,9 @@ canvas {
 }
 
 .traffic-nav li {
-    padding: 8px 8px;
+    padding: 6px 6px;
     cursor: pointer;
+    font-size: 12px;
 }
 
 
@@ -389,21 +390,22 @@ canvas {
 
 /* ---SOCIAL STATS--- */
 
-/* .social-box {
+.social-box {
     display: flex;
     justify-content: space-between;
 
-} */
+}
 
 .social-wrap {
     display: flex;
     width: 100%;
     justify-content: space-between;
-
+    flex-direction: column;
 }
 
 .social-container {
-    display: block;
+    flex-direction: column;
+    display: flex;
     border: 1px solid darkgray;
     border-radius: 5px;
     margin-bottom: 1rem;
@@ -444,6 +446,8 @@ canvas {
     border-bottom: 1px solid darkgray;
 }
 
+
+
 .members-container a {
     text-decoration: none;
     cursor: pointer;
@@ -456,6 +460,10 @@ canvas {
     color: rgb(35, 7, 80);
 }
 
+.members-text a {
+    font-size: 8px;
+}
+
 .date {
     margin-left: auto;
 }
@@ -464,7 +472,7 @@ canvas {
 
 .activity {
     margin-top: 2rem;
-    ;
+
 }
 
 .activity-container {
@@ -644,7 +652,7 @@ select[class="form-field"] {
     /* ---- Header ---- */
 
     h1 {
-        margin-left: 1em;
+
         font-size: 2em;
     }
 
@@ -718,7 +726,20 @@ select[class="form-field"] {
         margin: 1em;
     }
 
+
+    /* --traffic links ---*/
+
+    .traffic-nav li {
+        font-size: 18px;
+        padding: 1em;
+    }
+
     /*---- social ----*/
+
+    .social-wrap {
+        display: flex;
+        flex-direction: row;
+    }
 
     .social-container {
         padding: 15px 12px;
@@ -774,6 +795,17 @@ select[class="form-field"] {
     .message textarea {
         height: 221px;
     }
+}
+
+.date {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+
+}
+
+.members-text a {
+    font-size: 12px;
 }
 
 @media (min-width: 1024px) {
