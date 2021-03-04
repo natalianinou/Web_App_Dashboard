@@ -331,7 +331,7 @@ main {
 .main-header-search input {
     padding: 16px;
     margin: 15px 8px;
-    font-size: 17px;
+    font-size: 14px;
     border: 0.2px solid rgb(227, 227, 227);
     border-radius: 4px;
     float: right;
@@ -339,6 +339,7 @@ main {
     height: 10px;
     background: #ffffff;
 }
+
 
 
 
@@ -751,9 +752,7 @@ select[class="form-field"] {
             100% {
                 transform: rotate(12deg);
             }
-
         }
-
     }
 
     /*---- activity ----*/
