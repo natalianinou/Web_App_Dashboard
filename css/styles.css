@@ -9,6 +9,7 @@
 
 .grid-container {
     display: grid;
+    height: 100vh;
     grid-template-columns: 100%;
     grid-template-rows: auto;
     grid-template-areas:
@@ -150,7 +151,7 @@ header {
 
 
 /* ---Dropdown + Bell--- */
-.bell {
+.bell:hover {
     transform-origin: left-right;
     transform-box: fill-box;
     animation: spin 0.2s cubic-bezier(.6, 0, .6, 1) infinite;
