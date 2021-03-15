@@ -8,6 +8,7 @@ const user = document.getElementById("userField");
 const message = document.getElementById("messageField");
 const send = document.getElementById("send");
 
+
 // Alert
 
 
@@ -218,4 +219,63 @@ window.onclick = function(event) {
       }
     }
   }
+
 }
+
+
+// LOCALSTORAGE
+
+const settings = document.getElementById('settings');
+const save = document.getElementById('save');
+const cancel = document.getElementById('cancel');
+const switch1 = document.querySelectorAll('input[type=checkbox]')[0];
+const switch2 = document.querySelectorAll('input[type=checkbox]')[1];  
+const timezone = document.getElementById('timezone');
+
+
+settings.addEventListener('click', (e) => {
+  if(e.target === cancel) { 
+    clearLocalStorage();
+    getLocalStorage();
+    timezone.selectedIndex = 0; // when cancel button is pressed, first select option becomes default
+  } else if (e.target === save) {
+    setLocalStorage();
+  } 
+});
+
+// Clear local storage
+function clearLocalStorage() {
+  localStorage.clear();
+}
+
+// Set Local storage
+function setLocalStorage() {
+  localStorage.setItem('switch1', switch1.checked);  
+  localStorage.setItem('switch2', switch2.checked);
+  localStorage.setItem('timezone', timezone.value); 
+}
+
+// Get the data from local storage when refreshed
+function getLocalStorage () {   
+  
+  let switch1Load = localStorage.getItem('switch1');
+  let switch2Load = localStorage.getItem('switch2');
+  let timezoneLoad = localStorage.getItem('timezone');
+
+  controlSwitch(switch1Load, switch1);
+  controlSwitch(switch2Load, switch2);
+
+  if(timezoneLoad !== null) {
+    timezone.value = timezoneLoad;
+  } 
+}
+// saved switch for toggle buttons & timezone
+function controlSwitch (load, switching) {
+  if (load !== null && load === 'true') {
+    switching.checked = true;
+  } else {
+    switching.checked = false;
+  }
+}
+// call getLocalStorage function
+getLocalStorage ();

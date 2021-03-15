@@ -37,7 +37,7 @@ p {
 
 h1 {
     font-size: 21px;
-    padding: 2em;
+    padding: 2em 1em;
 }
 
 h2 {
@@ -51,7 +51,7 @@ h2 {
 .name {
     color: rgb(227, 227, 227);
     font-weight: 200;
-    ;
+    text-align: center;
 }
 
 h3 {
@@ -80,6 +80,9 @@ header .bell {
 
 }
 
+button {
+    cursor: pointer;
+}
 
 .username {
     font-size: 18px;
@@ -117,7 +120,7 @@ header .bell {
     border-radius: 50%;
     width: 45px;
     height: 45px;
-    margin: 0 1em;
+    margin: 0 0.5em;
 }
 
 
@@ -136,7 +139,6 @@ header {
 
 
 .profile-box {
-    margin-left: auto;
     display: flex;
     align-items: center;
 
@@ -173,11 +175,6 @@ header {
 
 }
 
-
-
-.name {
-    padding-right: 16px;
-}
 
 
 /* Dropdown Button */
@@ -354,6 +351,7 @@ canvas {
     display: flex;
     justify-content: space-between;
     margin-top: 1em;
+    flex-direction: column;
 }
 
 
